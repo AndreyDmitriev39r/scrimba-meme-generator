@@ -23,10 +23,14 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  color: #FFF;
+  background: linear-gradient(90deg, #672280, #A626D3);
 }
 
 .nav--heading {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
 }
 
