@@ -32,11 +32,12 @@ nav {
 .nav--heading {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-left: 20px;
 }
 
 .nav--heading--image {
-  height: 26px;
+  height: 30px;
   width: 31px;
 }
 

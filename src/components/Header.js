@@ -1,4 +1,4 @@
-import TrollFace from "./trollface.png"
+import TrollFace from "../images/trollface2.png"
 
 function Header() {
   return (
