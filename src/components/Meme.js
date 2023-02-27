@@ -1,24 +1,36 @@
+import { useState } from "react";
+import tempData from "../temp_data";
+
 function Meme() {
+
+  // helper functions
+  const pickRandomEl = arr => arr[Math.floor(Math.random() * arr.length)]
   const handleClick = () => {
-    console.log('i was clicked');
+    setStuff(pickRandomEl(tempData));
   }
+
+  // state
+  const [stuff, setStuff] = useState(pickRandomEl(tempData))
   return (
-    <form>
-      <input
-        className="form--text-field top"
-        type="text"
-        placeholder="shut up" />
-      <input
-        className="form--text-field bottom"
-        type="text"
-        placeholder="and take my money" 
-      />
-      <button        
-        className="form--newmeme"
-        type="button"
-        onClick={handleClick}
-      >Get a new meme image</button>
-    </form>
+    <>
+      <form>
+        <input
+          className="form--text-field top"
+          type="text"
+          placeholder="shut up" />
+        <input
+          className="form--text-field bottom"
+          type="text"
+          placeholder="and take my money" 
+        />
+        <button        
+          className="form--newmeme"
+          type="button"
+          onClick={handleClick}
+        >Get a new meme image</button>
+      </form>
+      <div className="tempStuff">{stuff}</div>
+    </>
   );
 }
 

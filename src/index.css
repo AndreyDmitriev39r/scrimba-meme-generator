@@ -92,3 +92,9 @@ form {
   cursor: pointer;
 }
 
+.tempStuff {
+  border: 1px solid black;
+  margin: 36px;
+  text-align: center;
+}
+
