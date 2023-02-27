@@ -29,7 +29,11 @@ function Meme() {
           onClick={handleClick}
         >Get a new meme image</button>
       </form>
-      <div className="tempStuff">{stuff}</div>
+      <div className="tempStuff">
+        <p>{stuff.bottomText}</p>
+        <p>{stuff.image}</p>
+        <p>{stuff.topText}</p>
+      </div>
     </>
   );
 }
