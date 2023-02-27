@@ -57,6 +57,8 @@ nav {
 
 /* meme */
 
+/* note: grid approach would be more concise */
+
 form {  
   margin: 36px;
   display: flex;
@@ -87,5 +89,6 @@ form {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -1.6px;
+  cursor: pointer;
 }
 
