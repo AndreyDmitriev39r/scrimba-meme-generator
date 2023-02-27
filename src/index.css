@@ -31,6 +31,26 @@ nav {
 
 .nav--heading {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.nav--heading--image {
+  height: 26px;
+  width: 31px;
+}
+
+.nav--heading--text {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: -2px;
+}
+
+.nav--subheading {
+  margin-right: 37px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
 }
 
