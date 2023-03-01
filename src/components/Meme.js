@@ -4,24 +4,41 @@ import tempData from "../temp_data";
 function Meme() {
 
   // helper functions
+
   const pickRandomEl = arr => arr[Math.floor(Math.random() * arr.length)]
+
   const handleClick = () => {
     setStuff(pickRandomEl(tempData));
   }
 
+  const handleChange = (event) => {
+    const {name, value} = event.target;
+    setStuff((prevStuff) => (
+      {...prevStuff, [name] : value}
+    ))
+  }
+
   // state
   const [stuff, setStuff] = useState(pickRandomEl(tempData))
+
   return (
     <>
       <form>
         <input
           className="form--text-field top"
           type="text"
-          placeholder="shut up" />
+          placeholder="shut up"
+          name="topText"
+          value={stuff.topText}
+          onChange={handleChange}
+        />
         <input
           className="form--text-field bottom"
           type="text"
           placeholder="and take my money" 
+          name="bottomText"
+          value={stuff.bottomText}
+          onChange={handleChange}
         />
         <button        
           className="form--newmeme"
