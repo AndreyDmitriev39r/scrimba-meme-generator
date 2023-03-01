@@ -37,9 +37,7 @@ function Meme() {
     fetch('https://api.imgflip.com/get_memes')
       .then(res => res.json())
       .then(data => setAllMemes(data.data.memes));    
-  }, [])
- 
-  console.log(memes);
+  }, [])  
 
   return (
     <>
@@ -67,12 +65,12 @@ function Meme() {
         >Get a new meme image</button>
       </form>
       <figure className="image-container">
-        {/* <p>{stuff.topText}</p> */}
+        <p className="text--top">{stuff.topText}</p>
         <img
           src={stuff.image}
           className="meme--image"
         />
-        {/* <p>{stuff.bottomText}</p> */}
+        <p className="text--bottom">{stuff.bottomText}</p>
       </figure>
     </>
   );
