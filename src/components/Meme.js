@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import tempData from "../temp_data";
 
 function Meme() {
+
+  let memesData;
 
   // helper functions
 
@@ -21,7 +23,19 @@ function Meme() {
   }
 
   // state
+
   const [stuff, setStuff] = useState(pickRandomEl(tempData))
+
+  // effects
+
+  
+
+  useEffect(() => {
+    const myInit = {mode: 'no-cors'}
+    fetch('https://i.imgflip.com/get_memes', myInit
+    ).then(res => res.json()).then(data => console.log(data));    
+  }, [])
+ 
 
   return (
     <>
