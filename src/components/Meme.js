@@ -8,7 +8,9 @@ function Meme() {
   const pickRandomEl = arr => arr[Math.floor(Math.random() * arr.length)]
 
   const handleClick = () => {
-    setStuff(pickRandomEl(tempData));
+    setStuff(
+      (prevStuff) => ({...prevStuff, image: pickRandomEl(tempData).image})
+    );
   }
 
   const handleChange = (event) => {
