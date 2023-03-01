@@ -92,9 +92,12 @@ form {
   cursor: pointer;
 }
 
-.tempStuff {
-  border: 1px solid black;
+.image-container {
+  border: 1px solid black;  
   margin: 36px;
-  text-align: center;
+  position: relative;
 }
 
+.meme--image {
+  width: 100%;
+}

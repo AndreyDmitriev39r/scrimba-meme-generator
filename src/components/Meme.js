@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import tempData from "../temp_data";
 
 function Meme() {
 
@@ -11,7 +10,7 @@ function Meme() {
 
   const handleClick = () => {
     setStuff(
-      (prevStuff) => ({...prevStuff, image: pickRandomEl(tempData).image})
+      (prevStuff) => ({...prevStuff, image: pickRandomEl(memes).url})
     );
   }
 
@@ -24,18 +23,23 @@ function Meme() {
 
   // state
 
-  const [stuff, setStuff] = useState(pickRandomEl(tempData))
+  const [stuff, setStuff] = useState({
+    topText: "",
+    image: 'https://i.imgflip.com/3oevdk.jpg',
+    bottomText: "",
+  });
 
-  // effects
+  const [memes, setAllMemes] = useState([]);
 
-  
+  // effects  
 
-  useEffect(() => {
-    const myInit = {mode: 'no-cors'}
-    fetch('https://i.imgflip.com/get_memes', myInit
-    ).then(res => res.json()).then(data => console.log(data));    
+  useEffect(() => {    
+    fetch('https://api.imgflip.com/get_memes')
+      .then(res => res.json())
+      .then(data => setAllMemes(data.data.memes));    
   }, [])
  
+  console.log(memes);
 
   return (
     <>
@@ -62,11 +66,14 @@ function Meme() {
           onClick={handleClick}
         >Get a new meme image</button>
       </form>
-      <div className="tempStuff">
-        <p>{stuff.bottomText}</p>
-        <p>{stuff.image}</p>
-        <p>{stuff.topText}</p>
-      </div>
+      <figure className="image-container">
+        {/* <p>{stuff.topText}</p> */}
+        <img
+          src={stuff.image}
+          className="meme--image"
+        />
+        {/* <p>{stuff.bottomText}</p> */}
+      </figure>
     </>
   );
 }
