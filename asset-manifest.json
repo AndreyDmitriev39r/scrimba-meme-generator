@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/scrimba-meme-generator/static/css/main.6306b39f.css",
+    "main.js": "/scrimba-meme-generator/static/js/main.1cca1b24.js",
+    "static/media/trollface2.png": "/scrimba-meme-generator/static/media/trollface2.a1fd10570642e7d3117c.png",
+    "index.html": "/scrimba-meme-generator/index.html",
+    "main.6306b39f.css.map": "/scrimba-meme-generator/static/css/main.6306b39f.css.map",
+    "main.1cca1b24.js.map": "/scrimba-meme-generator/static/js/main.1cca1b24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6306b39f.css",
+    "static/js/main.1cca1b24.js"
+  ]
+}
